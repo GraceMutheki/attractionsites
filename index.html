@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Attraction Sites</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main">
+    
+        
+            <div class="header">
+               <h1>TRAVELLERS</h1>
+               <div class="menu">
+                    <ul>
+                            <li>
+                                <a href="index.html">HOME</a>
+                                <a href="SITES.html">SITES</a>
+                                <a href="contact.html">CONTACTS</a>
+                                <a href="signup.html"><button class="btn">SIGN UP</button></a>
+                            </li>
+                    </ul>
+               </div>
+            </div>
+               <div class="container">
+                <!--<div class="slideshow">
+                    <img class="myslide" src="images2/bear.jpg">
+                    <img class="myslide" src="images2/dunes.jpg">
+                    <img class="myslide" src="images2/lion.jpg">
+                    <img class="myslide" src="images2/mount A.jpg">
+                    <img class="myslide" src="images2/parot.jpg">
+                    <img class="myslide" src="images2/zebras.jpg">
+                </div>-->
+
+                <div class="details">
+                <p><span class="all">Welcome to <span class="head">Travellers Tours</span>,your close friend as you discover the world unknown</span> <br> <br> <br>
+                    Planning your next getaway?Is it a local destination or an International destination?We got you covered.
+                 Travellers Tours provide detailed guides and real-time insights on all tourist attraction sites all over the globe.</p> <br> <br>
+                 <a href="SITES.html"><button class="btn">Get Started</button></a>
+
+               </div>
+
+               <div class="image">
+                <img src="images2/zebras.jpg">
+               </div>
+               </div>
+            <script>
+                /*var myIndex = 0;
+                carousel();
+
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("myslide");
+                    for (i = 0; i< x.length; i++){
+                        x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex>x.length) {myIndex = 1}
+                    x[myIndex-1].style.display = "block";
+                    setTimeout(carousel, 2000);
+                }*/
+                function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI();  
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this webpage.';
+    }
+  }
+
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+      statusChangeCallback(response);
+    });
+  }
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{app-id}',
+      cookie     : true,                     // Enable cookies to allow the server to access the session.
+      xfbml      : true,                     // Parse social plugins on this webpage.
+      version    : '{api-version}'           // Use this Graph API version for this call.
+    });
+
+
+    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      statusChangeCallback(response);        // Returns the login status.
+    });
+  };
+ 
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+</script>
+
+
+<!-- The JS SDK Login Button -->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+
+<!-- Load the JS SDK asynchronously -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+            </script>
+    
+</body>
+</html>
